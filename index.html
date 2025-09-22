@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montage Lab</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Стили -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="min-h-screen bg-[#0B0F1A] text-white relative overflow-x-hidden">
+
+    <!-- Radial Gradient Background -->
+    <div class="absolute inset-0 z-0 radial-gradient-custom"></div>
+
+    <!-- Scrolling Lines Background Canvas -->
+    <canvas id="scrolling-abstraction" class="absolute inset-0 w-full h-full z-0"></canvas>
+
+    <!-- Header -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-50 backdrop-blur-sm bg-black bg-opacity-30 border-b border-gray-800 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 bg-gradient-to-tr from-[#00F5A0] to-[#7C5CFF] rounded-full flex items-center justify-center">
+                    <span class="sr-only">Логотип</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="white" stroke-opacity="0.15" /></svg>
+                </div>
+                <strong class="text-sm font-semibold font-['Montserrat']">MONTAGE LAB</strong>
+            </div>
+            <nav>
+                <button onclick="document.getElementById('form-main').scrollIntoView({ behavior: 'smooth' })" class="ml-4 inline-flex items-center gap-2 bg-gradient-to-r from-[#00F5A0] to-[#7C5CFF] text-black px-4 py-2 rounded-2xl shadow-lg text-sm font-semibold font-['Montserrat'] hover:opacity-80 transition" aria-label="Записаться">
+                    Записаться — места ограничены
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="pt-28 relative z-10">
+        <!-- Hero Section -->
+        <section class="max-w-6xl mx-auto px-4 py-12 lg:py-20 flex flex-col items-center relative">
+            <div class="max-w-3xl text-center relative z-10">
+                <h1 class="text-4xl md:text-5xl lg:text-[64px] leading-tight font-['Playfair Display'] font-bold relative inline-block overflow-hidden header-bg">
+                    <span class="header-content">СТАНЬ МОНТАЖЁРОМ, КОТОРЫЙ ПРОДАЁТ.</span>
+                </h1>
+                <p class="mt-4 text-xl text-gray-400 font-['Montserrat'] leading-relaxed">Практика, файлы и реальный фидбек — от нуля до PRO за X недель.</p>
+                <div class="mt-6 flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="document.getElementById('form-main').scrollIntoView({ behavior: 'smooth' })" class="px-6 py-3 rounded-2xl font-semibold font-['Montserrat'] bg-[#00F5A0] text-black shadow-lg transform hover:-translate-y-1 transition" aria-label="Записаться">
+                        Записаться — места ограничены
+                    </button>
+                </div>
+                <div class="mt-8 grid grid-cols-3 gap-4">
+                    <div class="flex flex-col items-start gap-2">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-white bg-opacity-5">⚡</div>
+                        <div class="text-base font-semibold font-['Montserrat']">Быстро</div>
+                        <div class="text-sm text-gray-400 font-['Montserrat']">курсы сфокусированы на результате</div>
+                    </div>
+                    <div class="flex flex-col items-start gap-2">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-white bg-opacity-5">🎬</div>
+                        <div class="text-base font-semibold font-['Montserrat']">Практика</div>
+                        <div class="text-sm text-gray-400 font-['Montserrat']">реальные правки и проекты</div>
+                    </div>
+                    <div class="flex flex-col items-start gap-2">
+                        <div class="w-10 h-10 rounded-lg flex items-center justify-center bg-white bg-opacity-5">💼</div>
+                        <div class="text-base font-semibold font-['Montserrat']">Трудоустройство</div>
+                        <div class="text-sm text-gray-400 font-['Montserrat']">помощь в портфолио</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section class="bg-white bg-opacity-[0.02] py-12">
+            <div class="max-w-6xl mx-auto px-4">
+                <h2 class="text-2xl mb-6 font-semibold font-['Playfair Display']">Курсы</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gradient-to-br from-[#1A1A3A] to-[#3B2C68]">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg font-semibold font-['Montserrat']">БАЗА</h4>
+                            <div class="text-sm text-gray-400 font-['Montserrat']">6 недель</div>
+                        </div>
+                        <ul class="mt-3 text-sm space-y-1 font-['Montserrat']">
+                            <li>• Интерфейс и рабочие панели</li>
+                            <li>• Монтаж под соцсети</li>
+                            <li>• Таймлайн и cuts</li>
+                            <li>• Цветокоррекция — базовый</li>
+                            <li>• Экспорт и оптимизация</li>
+                        </ul>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="text-xl font-semibold font-['Montserrat']">от 9 990 ₽</div>
+                            <button class="px-4 py-2 rounded-lg bg-[#00F5A0] text-black font-['Montserrat'] hover:bg-[#00e390] transition">
+                                Записаться
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 rounded-2xl border border-gray-800 bg-gradient-to-br from-[#123A25] to-[#2C685B]">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-lg font-semibold font-['Montserrat']">ПРО</h4>
+                            <div class="text-sm text-gray-400 font-['Montserrat']">12 недель</div>
+                        </div>
+                        <ul class="mt-3 text-sm space-y-1 font-['Montserrat']">
+                            <li>• Сложный монтаж</li>
+                            <li>• VFX приёмы</li>
+                            <li>• Работа со звуком</li>
+                            <li>• Сценарная подача</li>
+                            <li>• Фриланс и трудоустройство</li>
+                        </ul>
+                        <div class="mt-4 flex items-center justify-between">
+                            <div class="text-xl font-semibold font-['Montserrat']">от 29 990 ₽</div>
+                            <button class="px-4 py-2 rounded-lg bg-[#00F5A0] text-black font-['Montserrat'] hover:bg-[#00e390] transition">
+                                Записаться
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kit Section -->
+        <section class="py-12">
+            <div class="max-w-6xl mx-auto px-4">
+                <h3 class="text-xl font-semibold font-['Playfair Display']">В комплекте</h3>
+                <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="p-3 rounded-lg bg-white bg-opacity-[0.02] text-center border border-gray-800">
+                        <div class="font-semibold font-['Montserrat'] text-base">Шаблоны</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-white bg-opacity-[0.02] text-center border border-gray-800">
+                        <div class="font-semibold font-['Montserrat'] text-base">Пресеты</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-white bg-opacity-[0.02] text-center border border-gray-800">
+                        <div class="font-semibold font-['Montserrat'] text-base">Чек-листы</div>
+                    </div>
+                    <div class="p-3 rounded-lg bg-white bg-opacity-[0.02] text-center border border-gray-800">
+                        <div class="font-semibold font-['Montserrat'] text-base">Поддержка в чате</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teacher Section -->
+        <section class="py-12">
+            <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row gap-6 items-center">
+                <img src="https://placehold.co/144x144/1a1a1a/cccccc?text=Teacher" alt="Преподаватель" class="w-36 h-36 rounded-full object-cover border border-gray-800" />
+                <div>
+                    <h4 class="text-lg font-semibold font-['Playfair Display']">Иван Петров — lead editor</h4>
+                    <p class="text-sm text-gray-400 mt-2 font-['Montserrat']">Более 200 монтажей для брендов и студий — показывали на фестивалях и YouTube-каналах.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-12">
+            <div class="max-w-6xl mx-auto px-4">
+                <h3 class="text-xl font-semibold font-['Playfair Display']">Отзывы</h3>
+                <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <blockquote class="p-4 rounded-lg bg-white bg-opacity-[0.01] bg-gradient-to-tr from-transparent to-gray-900">
+                        <p class="text-sm font-['Montserrat']">“Супер интенсив — уже взяла первые заказы.”</p>
+                        <footer class="mt-2 text-xs text-gray-400 font-['Montserrat']">— Аня</footer>
+                    </blockquote>
+                    <blockquote class="p-4 rounded-lg bg-white bg-opacity-[0.01] bg-gradient-to-tr from-transparent to-gray-900">
+                        <p class="text-sm font-['Montserrat']">“Крутая фидбек-система. Очень полезно.”</p>
+                        <footer class="mt-2 text-xs text-gray-400 font-['Montserrat']">— Михаил</footer>
+                    </blockquote>
+                    <blockquote class="p-4 rounded-lg bg-white bg-opacity-[0.01] bg-gradient-to-tr from-transparent to-gray-900">
+                        <p class="text-sm font-['Montserrat']">“Промежуточные правки — топ.”</p>
+                        <footer class="mt-2 text-xs text-gray-400 font-['Montserrat']">— Наталья</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <!-- Form Section -->
+        <section id="form-main" class="py-12">
+            <div class="max-w-3xl mx-auto px-4">
+                <div class="glass-card p-6 rounded-2xl">
+                    <h3 class="text-xl font-semibold font-['Playfair Display']">Записаться</h3>
+                    <p class="text-sm text-gray-400 mt-1 font-['Montserrat']">Оставь контакт — напишем детали и даты старта.</p>
+                    <form id="contact-form" class="mt-4 grid grid-cols-1 gap-3">
+                        <label class="flex flex-col text-sm font-['Montserrat']">
+                            Имя*
+                            <input name="name" class="mt-1 p-3 rounded-lg bg-white bg-opacity-[0.02]" required />
+                            <span id="name-error" class="text-xs text-red-400 hidden"></span>
+                        </label>
+                        <label class="flex flex-col text-sm font-['Montserrat']">
+                            Email*
+                            <input name="email" type="email" class="mt-1 p-3 rounded-lg bg-white bg-opacity-[0.02]" required />
+                            <span id="email-error" class="text-xs text-red-400 hidden"></span>
+                        </label>
+                        <label class="flex flex-col text-sm font-['Montserrat']">
+                            Телефон
+                            <input name="phone" type="tel" class="mt-1 p-3 rounded-lg bg-white bg-opacity-[0.02]" />
+                        </label>
+                        <fieldset class="flex items-center gap-4 text-sm font-['Montserrat']">
+                            <legend class="sr-only">Уровень</legend>
+                            <label class="flex items-center gap-2">
+                                <input type="radio" name="level" value="БАЗА" checked /> БАЗА
+                            </label>
+                            <label class="flex items-center gap-2">
+                                <input type="radio" name="level" value="ПРО" /> ПРО
+                            </label>
+                        </fieldset>
+                        <label class="flex flex-col text-sm font-['Montserrat']">
+                            Как узнали?
+                            <select name="how" class="mt-1 p-3 rounded-lg bg-white bg-opacity-[0.02]">
+                                <option value="">—</option>
+                                <option value="Инстаграм">Инстаграм</option>
+                                <option value="Друзья">Друзья</option>
+                                <option value="Реклама">Реклама</option>
+                            </select>
+                        </label>
+                        <label class="text-xs mt-2 font-['Montserrat']">
+                            <input type="checkbox" required /> Я согласен на обработку персональных данных
+                        </label>
+                        <div class="mt-4 flex items-center gap-3">
+                            <button type="submit" class="px-6 py-3 rounded-2xl bg-[#00F5A0] text-black font-semibold font-['Montserrat'] hover:opacity-80 transition">
+                                Записаться
+                            </button>
+                        </div>
+                        <div id="loading-message" class="hidden text-sm text-white font-['Montserrat']">Отправка...</div>
+                        <div id="success-message" class="hidden mt-4 p-4 bg-[#00F5A0] bg-opacity-[0.08] rounded text-[#00F5A0] font-['Montserrat']">Спасибо — мы свяжемся в ближайшее время.</div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-12">
+            <div class="max-w-6xl mx-auto px-4">
+                <h3 class="text-xl font-semibold font-['Playfair Display']">FAQ</h3>
+                <div id="accordion" class="space-y-2">
+                    <div class="bg-white bg-opacity-[0.01] rounded-lg p-3">
+                        <button class="accordion-header w-full text-left flex justify-between items-center">
+                            <span class="font-semibold font-['Montserrat']">Когда старт?</span>
+                            <span class="font-['Montserrat']">+</span>
+                        </button>
+                        <div class="accordion-content mt-2 text-sm text-gray-400 font-['Montserrat'] hidden">Даты обновляются — проверьте на странице набора.</div>
+                    </div>
+                    <div class="bg-white bg-opacity-[0.01] rounded-lg p-3">
+                        <button class="accordion-header w-full text-left flex justify-between items-center">
+                            <span class="font-semibold font-['Montserrat']">Нужен ли опыт?</span>
+                            <span class="font-['Montserrat']">+</span>
+                        </button>
+                        <div class="accordion-content mt-2 text-sm text-gray-400 font-['Montserrat'] hidden">Нет, базовый поток — от нуля.</div>
+                    </div>
+                    <div class="bg-white bg-opacity-[0.01] rounded-lg p-3">
+                        <button class="accordion-header w-full text-left flex justify-between items-center">
+                            <span class="font-semibold font-['Montserrat']">Сертификат?</span>
+                            <span class="font-['Montserrat']">+</span>
+                        </button>
+                        <div class="accordion-content mt-2 text-sm text-gray-400 font-['Montserrat'] hidden">Да — по итогу курса.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="py-8 border-t border-gray-800">
+            <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="text-sm text-gray-400 font-['Montserrat']">© 2024 MontageLab — Все права защищены</div>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition font-['Montserrat']">IG</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition font-['Montserrat']">YT</a>
+                    <a href="#" class="text-sm text-gray-400 hover:text-white transition font-['Montserrat']">Visa / MC</a>
+                </div>
+                <a href="#" class="text-sm text-gray-400 hover:text-white transition font-['Montserrat']">Политика конфиденциальности</a>
+            </div>
+        </footer>
+    </main>
+    <!-- Скрипты -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
